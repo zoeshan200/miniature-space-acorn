@@ -1,0 +1,58 @@
+;;
+;; Domain:     edge.com.
+;; Exported:   2025-04-06 00:15:27
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+edge.com	3600	IN	SOA	maxine.ns.cloudflare.com. dns.cloudflare.com. 2049556512 10000 2400 604800 3600
+
+;; NS Records
+edge.com.	86400	IN	NS	maxine.ns.cloudflare.com.
+edge.com.	86400	IN	NS	pedro.ns.cloudflare.com.
+
+;; A Records
+*.edge.com.	1	IN	A	208.91.197.27 ; cf_tags=cf-proxied:true
+edge.com.	1	IN	A	208.91.197.27 ; cf_tags=cf-proxied:true
+zoeshan2000.edge.com.	1	IN	A	208.91.197.27 ; Home worker’s Devil cf_tags=cf-proxied:true
+
+;; CNAME Records
+autodiscover.edge.com.	1	IN	CNAME	autodiscover.outlook.com. ; cf_tags=cf-proxied:true
+enterpriseenrollment.edge.com.	1	IN	CNAME	enterpriseenrollment.manage.microsoft.com. ; cf_tags=cf-proxied:true
+enterpriseregistration.edge.com.	1	IN	CNAME	enterpriseregistration.windows.net. ; cf_tags=cf-proxied:true
+lyncdiscover.edge.com.	1	IN	CNAME	webdir.online.lync.com. ; cf_tags=cf-proxied:true
+sip.edge.com.	1	IN	CNAME	sipdir.online.lync.com. ; cf_tags=cf-proxied:true
+
+;; MX Records
+*.edge.com.	1	IN	MX	10 mailsrv.edge.com.
+edge.com.	1	IN	MX	0 edge-com.mail.protection.outlook.com.
+
+;; NS Records
+edge.com.	1	IN	NS	ns22.worldnic.com.
+edge.com.	1	IN	NS	ns21.worldnic.com.
+
+;; SRV Records
+_sip._tls.edge.com.	1	IN	SRV	100 1 443 sipdir.online.lync.com.
+_zoeshan2000._tcp.dege.com.edge.com.	1	IN	SRV	100 1 5061 sipfed.online.lync.com. ; Masc center
+
+;; TXT Records
+edge.com.	1	IN	TXT	"v=spf1 include:spf.protection.outlook.com -all"
